@@ -17,13 +17,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #F2F1F2;
+  background: #040404;
+  padding: 0 10px 10px 10px
 }
 
 @layer utilities {
