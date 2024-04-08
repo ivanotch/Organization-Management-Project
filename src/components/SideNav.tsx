@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function SideNav () {
     return (
-        <nav className='h-[100vh] w-[3rem] border-[#2d2d2d] border-r'>
+        <nav className='h-[91vh] w-[3rem] border-[#2d2d2d] border-r'>
             <ul className='flex flex-col items-center '>
                 <li className='mb-[24px] mt-[25px]'>
                     <Link href={"/"}><img className='' src="/dashboard.svg" alt="Dashboard" width={35} height={35}/></Link>
