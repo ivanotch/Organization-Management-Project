@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://ivanotch-s-workspace-jhoi6b.us-east-1.xata.sh/db/earist-org-saya",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
