@@ -17,9 +17,9 @@ export default function RootLayout({
         <html lang="en">
           <body className="min-h-screen">
             {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" ? null : <Nav />}
-            <div className="flex">
+            <div className="flex flex-row">
               {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" ? null : <SideNav />}
-              <div className="w-[100%] pt-[1rem] px-[2rem]">
+              <div className="w-[97%] pt-[1rem] px-[2rem]">
                 {children}
               </div>
             </div>

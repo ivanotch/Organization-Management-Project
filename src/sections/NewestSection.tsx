@@ -1,9 +1,10 @@
 import React from "react";
+import Cards from "@/components/card/Cards";
 
-export default function NewestSection () {
+export default function NewestSection ({data}: {data: any}) {
     return (
-        <section className='flex flex-col items-center justify-between border border-[#2d2d2d] w-[100%] h-[35vh]'>
-            Newest Section
+        <section className='flex justify-center items-center border border-[#2d2d2d] w-[100%] h-[35vh]'>
+            <Cards data={data}/>
         </section>
     )
 

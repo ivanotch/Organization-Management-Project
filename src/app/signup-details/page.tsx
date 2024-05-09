@@ -1,46 +1,41 @@
-'use client';
-import React, {useState} from "react";
-import {Select, SelectItem, Input} from "@nextui-org/react";
-import {Button} from "@nextui-org/react";
-import { FormEvent } from "react";
+"use server";
+import React from "react";
+import { getXataClient } from "@/xata";
+import { currentUser } from '@clerk/nextjs';
+import Form from "./form";
+import { redirect } from 'next/navigation'
 
-export default function SignupDetailsPage() {
-  const [year, setyear] = useState("1st Year");
-  const yearOptions = ["1st Year", "2nd Year", "3rd Year", "4th Year", "5th Year"];
+async function onSubmit(formData: FormData) {
+  'use server';
+  const studentID = formData.get("studentID") as string;
+  const yearlevel = formData.get("yearlevel") as string;
+  const user = await currentUser();
 
-  function onSubmit(event: FormEvent) {
+  const xataClient = getXataClient();
+
+  const id = await xataClient.db.userData.filter({studentId: studentID}).getMany();
+  
+  if (id.length !== 0) {
+    console.log("User already exists");
+    return;
   }
 
-  function handleyear(event: React.ChangeEvent<HTMLSelectElement>) {
-    setyear(event.target.value);
-  }
+  const record = await xataClient.db.userData.create({
+    name: `${user?.firstName} ${user?.lastName}`,
+    userId: `${user?.id}`,
+    studentId: studentID,
+    email: `${user?.emailAddresses[0].emailAddress}`,
+    yearlevel: yearlevel,
+  });
+
+  redirect('/');
+}
+
+export default async function SignupDetailsPage() {
 
   return (
     <div className="flex justify-center">
-      <form onSubmit={onSubmit} className="h-[15rem] w-[25rem] mt-[14%] p-[1rem] border-[#2d2d2d] border flex flex-col">
-        <h1 className="text-[1.4em] mx-[auto] mb-[15px]">Continue Signing Up</h1>
-        <div className="flex flex-col items-center">
-          
-            <Select 
-              label="Select a Year Level" 
-              className="max-w-xs text-slate-800 mb-[10px]" 
-              size="sm"
-              fullWidth={true}
-            >
-              {yearOptions.map((year) => (
-                <SelectItem className="text-slate-800" key={year} value={year}>
-                  {year}
-                </SelectItem>
-              ))}
-            </Select>
-          
-        
-            <Input className="max-w-xs mb-[15px]" size="sm" type="text" label="Student ID" placeholder="Enter your Student ID" />
-            <Button  color="primary" variant="ghost">
-              Continue
-            </Button>
-        </div>
-      </form>
+      <Form action={onSubmit} />
     </div>
   )
 }
