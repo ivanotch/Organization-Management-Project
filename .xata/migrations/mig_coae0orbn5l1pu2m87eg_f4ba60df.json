@@ -1,0 +1,18 @@
+{
+  "id": "mig_coae0orbn5l1pu2m87eg",
+  "parentID": "mig_coae0j3pa7504nlt1hs0",
+  "checksum": "1:f4ba60df7282c23d3081b9137fc9aa5f2aad4084483f6c1bc87f79d467ee72ab",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "yearlevel",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "null"
+        },
+        "table": "userData"
+      }
+    }
+  ]
+}

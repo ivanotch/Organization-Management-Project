@@ -1,0 +1,16 @@
+{
+  "id": "mig_coa21pjpa7504nlt1bmg",
+  "parentID": "mig_coa21jjpa7504nlt1bdg",
+  "checksum": "1:5f70c5bce8ab5d1591cd65ee1d4d068b011b41fcb0bffd573d67f30a07f81ba8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "user-data"
+      }
+    }
+  ]
+}

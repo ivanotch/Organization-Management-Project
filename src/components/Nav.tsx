@@ -7,7 +7,7 @@ export default function Nav () {
     return (
         <nav className='flex h-[3.5rem] justify-between items-center px-[3rem] border-[#2d2d2d] border-b'>
             <span className='text-[1.1em] font-semibold'>
-                <span className='text-[1.6em] font-semibold bg-gradient-to-r from-indigo-500 to-[#95A1F9] text-transparent bg-clip-text'>EARIST </span> 
+                <span className='text-[1.6em] font-semibold bg-gradient-to-r from-[#800000] to-[#800000] text-transparent bg-clip-text'>EARIST </span> 
                 <span className='text-[1.6em] font-semibold bg-gradient-to-r from-indigo-500 to-[#95A1F9] text-transparent bg-clip-text'> O</span>rg 
                 <span className='text-[1.6em] font-semibold bg-gradient-to-r from-indigo-500 to-[#95A1F9] text-transparent bg-clip-text'> S</span>aya
             </span>

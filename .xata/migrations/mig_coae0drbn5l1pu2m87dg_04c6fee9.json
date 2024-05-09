@@ -1,0 +1,17 @@
+{
+  "id": "mig_coae0drbn5l1pu2m87dg",
+  "parentID": "mig_coae06bpa7504nlt1hr0",
+  "checksum": "1:04c6fee91a8ad33edc60ea6f7215eca729f92e76ebb94e340f55c1da91a86e31",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "studentId",
+          "type": "string",
+          "unique": true
+        },
+        "table": "userData"
+      }
+    }
+  ]
+}
