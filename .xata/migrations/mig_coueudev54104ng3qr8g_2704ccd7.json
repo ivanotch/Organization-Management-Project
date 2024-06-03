@@ -1,0 +1,16 @@
+{
+  "id": "mig_coueudev54104ng3qr8g",
+  "parentID": "mig_coueu52fa7kvs2iv52h0",
+  "checksum": "1:2704ccd7aeb25f176ca67c3bbeb4f48381041f889c1949e3128ed17d7a17ed32",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "userId",
+          "type": "string"
+        },
+        "table": "applicationData"
+      }
+    }
+  ]
+}

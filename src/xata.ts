@@ -22,6 +22,31 @@ const tables = [
       },
     ],
   },
+  {
+    name: "applicationData",
+    columns: [
+      { name: "userId", type: "string", notNull: true, defaultValue: "null" },
+      { name: "eventId", type: "string" },
+      {
+        name: "status",
+        type: "string",
+        notNull: true,
+        defaultValue: "pending",
+      },
+    ],
+  },
+  {
+    name: "events",
+    columns: [
+      { name: "title", type: "text" },
+      { name: "description", type: "text" },
+      { name: "date", type: "datetime" },
+      { name: "location", type: "string" },
+      { name: "targetAudience", type: "string" },
+      { name: "image", type: "file[]" },
+      { name: "tags", type: "string" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -30,8 +55,16 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type UserData = InferredTypes["userData"];
 export type UserDataRecord = UserData & XataRecord;
 
+export type ApplicationData = InferredTypes["applicationData"];
+export type ApplicationDataRecord = ApplicationData & XataRecord;
+
+export type Events = InferredTypes["events"];
+export type EventsRecord = Events & XataRecord;
+
 export type DatabaseSchema = {
   userData: UserDataRecord;
+  applicationData: ApplicationDataRecord;
+  events: EventsRecord;
 };
 
 const DatabaseClient = buildClient();

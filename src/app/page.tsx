@@ -1,13 +1,10 @@
-"use client";
-import NewestSection from '@/sections/NewestSection';
-import OpenFormSection from '@/sections/OpenFormSection';
+import Main from '@/sections/Main';
 import React from 'react';
-import { useUser } from "@clerk/clerk-react";
-import { NextUIProvider } from '@nextui-org/react';
+import NewestSection from '../sections/NewestSection';
+import OpenFormSection from '../sections/OpenFormSection';
+import { getXataClient } from "@/xata";
 
-export default function Home() {
-
-  const { isSignedIn, user, isLoaded } = useUser();
+export default async function Home() {
   const data = [{
     title: 'CAFA Org',
     desciption: "CAFA Week is a week-long event that celebrates the achievements of the students in the College of Agriculture and Forestry.",
@@ -58,25 +55,27 @@ export default function Home() {
     image: 'https://source.unsplash.com/1600x900/?event',
     tags: ['All', 'Organization'],
   },
-]
+  ]
+  const xata = getXataClient();
 
-  if (!isLoaded) {
-    <div>Loading...</div>
-    return null;
-  }
+  const records = await xata.db.events
+    .select([
+      "title",
+      "description",
+      "date",
+      "location",
+      "targetAudience",
+      "image",
+      "tags",
+    ])
+    .getAll();
+    
+  console.log(records)
 
-  if (isSignedIn) {
-
-    return (
-      <NextUIProvider>
-        <main className="flex flex-col items-center justify-between">
-          <NewestSection  data={data} />
-          <OpenFormSection data={data} />
-          Dashboard
-        </main>
-      </NextUIProvider>
-    )
-  }
-
-  return <div>Not Signed In</div>;
+  return (
+    <Main>
+      <NewestSection  data={data} />
+      <OpenFormSection data={data} />
+    </Main>
+  )
 }

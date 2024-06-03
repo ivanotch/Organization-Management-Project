@@ -1,0 +1,18 @@
+{
+  "id": "mig_couf0d2fa7kvs2iv52k0",
+  "parentID": "mig_couevd2fa7kvs2iv52i0",
+  "checksum": "1:b9d290c46b4e56d86e924f9c91f2385dc0c3f7b19470e05adf7274910a10b68f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "status",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "pending"
+        },
+        "table": "applicationData"
+      }
+    }
+  ]
+}

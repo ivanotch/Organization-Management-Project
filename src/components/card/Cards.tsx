@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import CardUi from './Card'
 import "slick-carousel/slick/slick.css";

@@ -1,0 +1,13 @@
+{
+  "id": "mig_coueufa7rbe5lso5neig",
+  "parentID": "mig_coueudev54104ng3qr8g",
+  "checksum": "1:b291b4d2abd9b26ea02db00827b7d5b6db2d7e8b7dd84543831cc7f57ac60dc1",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "userId",
+        "table": "applicationData"
+      }
+    }
+  ]
+}

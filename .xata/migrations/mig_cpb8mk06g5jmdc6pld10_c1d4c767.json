@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpb8mk06g5jmdc6pld10",
+  "parentID": "mig_cpb8mg06g5jmdc6pld00",
+  "checksum": "1:c1d4c767a859534d8e68663d0d70f7a23217419a55b8b6fb6e6fc7426b252bbe",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "file[]"
+        },
+        "table": "events"
+      }
+    }
+  ]
+}

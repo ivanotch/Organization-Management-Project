@@ -1,14 +1,18 @@
-import React from 'react'
+'use client';
+import React, {useState} from 'react'
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import {Chip} from "@nextui-org/react";
-
 
 
 const CardUi = ({item}: {item: any}) => {
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
+  const submitApplication = () => {
+
+    console.log('Application Sent');
+  }
 
   return (
     <>
@@ -78,7 +82,7 @@ const CardUi = ({item}: {item: any}) => {
                 <Button color="primary" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button className="bg-[#6f4ef2] shadow-lg shadow-indigo-500/20" onPress={onClose}>
+                <Button className="bg-[#6f4ef2] shadow-lg shadow-indigo-500/20" onClick={submitApplication}>
                   Send Application
                 </Button>
               </ModalFooter>

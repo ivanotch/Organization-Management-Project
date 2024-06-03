@@ -1,17 +1,11 @@
+"use client"
 import React from "react";
-import { useState } from "react";
 import {Tabs, Tab} from "@nextui-org/react"; 
 import CardUi from "../components/card/Card";
 
 export default function OpenFormSection({data}: {data: any}) {
     const tags = ['All', 'Organization', 'Departments', 'Overall School']
 
-    // const [clickedTag, setClickedTag] = useState<string >("All")
-
-    // const handleClick = (tag: string) => {
-    //     setClickedTag(tag)
-    //     console.log("Clicked")
-    // }
     return (
         <section className='flex flex-col items-center justify-between border border-[#2d2d2d] w-[100%] '>
             <Tabs variant="bordered" className="mt-[3rem]">

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpb8mg06g5jmdc6pld00",
+  "parentID": "mig_cpb8mahvd75k0k8k83b0",
+  "checksum": "1:ff2fd8bf30d297832352e631611f6f1111d2358e2c056802c0c4dcb31ba0d0a8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "targetAudience",
+          "type": "string"
+        },
+        "table": "events"
+      }
+    }
+  ]
+}

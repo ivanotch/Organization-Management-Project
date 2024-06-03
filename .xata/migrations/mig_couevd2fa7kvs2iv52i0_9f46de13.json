@@ -1,0 +1,16 @@
+{
+  "id": "mig_couevd2fa7kvs2iv52i0",
+  "parentID": "mig_couev027rbe5lso5nejg",
+  "checksum": "1:9f46de138348cb4e3c1f9c375e05776822cbc2f1b68d9494ee74b4bf96a98023",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "eventId",
+          "type": "string"
+        },
+        "table": "applicationData"
+      }
+    }
+  ]
+}
