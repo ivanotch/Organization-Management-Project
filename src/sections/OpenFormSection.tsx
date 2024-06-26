@@ -1,9 +1,9 @@
 "use client"
 import React from "react";
 import {Tabs, Tab} from "@nextui-org/react"; 
-import CardUi from "../components/card/Card";
+import CardUi from "../components/card/CardUi";
 
-export default function OpenFormSection({data}: {data: any}) {
+export default function OpenFormSection({data, user}: {data: any, user: any}) {
     const tags = ['All', 'Organization', 'Departments', 'Overall School']
 
     return (
@@ -13,7 +13,7 @@ export default function OpenFormSection({data}: {data: any}) {
                     <Tab key={index} title={tag} className="flex justify-center">
                         <div className="grid grid-cols-4 gap-6 w-[80%] mt-[2rem]">
                             {data.map((info: any, index: number) => (
-                                (tag === "All" ? <CardUi  key={index} item={info} /> : info.tags.includes(tag) ? <CardUi key={index} item={info} /> : null)
+                                (tag === "All" ? <CardUi user={user}  key={index} item={info} /> : info.tags.includes(tag) ? <CardUi user={user} key={index} item={info} /> : null)
                             ))}
                         </div>
                     </Tab>

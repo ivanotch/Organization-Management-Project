@@ -1,18 +1,14 @@
 'use client';
-import React, {useState} from 'react'
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
+import React from 'react'
+import {Card, CardHeader, CardBody, CardFooter, Divider, Image} from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import {Chip} from "@nextui-org/react";
+import handleSubmit from './handleSubmit';
 
 
-const CardUi = ({item}: {item: any}) => {
+const CardUi = ({item, user}: {item: any, user: any}) => {
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-
-  const submitApplication = () => {
-
-    console.log('Application Sent');
-  }
 
   return (
     <>
@@ -28,7 +24,7 @@ const CardUi = ({item}: {item: any}) => {
             />
             <div className="flex flex-col">
               <p className="text-md">{item.title}</p>
-              <p className="text-small text-default-500">{item.time} / {item.date}</p>
+              <p className="text-small text-default-500">{item.date}</p>
             </div>
           </CardHeader>
           <Divider/>
@@ -72,7 +68,7 @@ const CardUi = ({item}: {item: any}) => {
                   {item.desciption}
                 </p>
                 <p> 
-                  The Event will be held on <span className='font-bold'>{item.date}</span> at <span className='font-bold'>{item.time}</span> in <span className='font-bold'>{item.location}</span>. This event is only for <span className='font-bold'>{item.targetAudience}</span>. 
+                  The Event will be held on <span className='font-bold'>{item.date}</span> in <span className='font-bold'>{item.location}</span>. This event is only for <span className='font-bold'>{item.targetAudience}</span>. 
                 </p>
                 <p>
                   Please note that non-<span className='font-bold'>{item.targetAudience}</span> will not be accepted to attend the event.
@@ -82,9 +78,11 @@ const CardUi = ({item}: {item: any}) => {
                 <Button color="primary" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button className="bg-[#6f4ef2] shadow-lg shadow-indigo-500/20" onClick={submitApplication}>
-                  Send Application
-                </Button>
+                <form action={() => handleSubmit({item, user})}>
+                  <Button className="bg-[#6f4ef2] shadow-lg shadow-indigo-500/20" onPress={onClose} type="submit">
+                    Send Application
+                  </Button>
+                </form>
               </ModalFooter>
             </>
           )}

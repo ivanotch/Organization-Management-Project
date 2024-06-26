@@ -16,9 +16,9 @@ export default function RootLayout({
     <ClerkProvider>
         <html lang="en">
           <body className="min-h-screen">
-            {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" ? null : <Nav />}
+            {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" ? null : <Nav path={pathname}/>}
             <div className="flex flex-row">
-              {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" ? null : <SideNav />}
+              {pathname === "/sign-in" || pathname === "/sign-up" || pathname === "/sign-in/factor-one" || pathname === "/admin" || pathname === "/admin/adminpage" || pathname === "/admin/applications"? null : <SideNav />}
               <div className="w-[97%] pt-[1rem] px-[2rem]">
                 {children}
               </div>

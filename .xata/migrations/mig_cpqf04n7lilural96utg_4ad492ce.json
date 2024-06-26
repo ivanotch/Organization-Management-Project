@@ -1,0 +1,17 @@
+{
+  "id": "mig_cpqf04n7lilural96utg",
+  "parentID": "mig_cpqf00f7lilural96usg",
+  "checksum": "1:4ad492cebcd236843805ce18bb16bad0d031393877f7d8edcd6e87543dbc889e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "email",
+          "type": "email",
+          "unique": true
+        },
+        "table": "adminData"
+      }
+    }
+  ]
+}

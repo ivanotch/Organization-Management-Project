@@ -40,11 +40,19 @@ const tables = [
     columns: [
       { name: "title", type: "text" },
       { name: "description", type: "text" },
-      { name: "date", type: "datetime" },
       { name: "location", type: "string" },
       { name: "targetAudience", type: "string" },
       { name: "image", type: "file[]" },
-      { name: "tags", type: "string" },
+      { name: "tags", type: "multiple" },
+      { name: "date", type: "string" },
+    ],
+  },
+  {
+    name: "adminData",
+    columns: [
+      { name: "name", type: "text" },
+      { name: "email", type: "email", unique: true },
+      { name: "password", type: "string", unique: true },
     ],
   },
 ] as const;
@@ -61,10 +69,14 @@ export type ApplicationDataRecord = ApplicationData & XataRecord;
 export type Events = InferredTypes["events"];
 export type EventsRecord = Events & XataRecord;
 
+export type AdminData = InferredTypes["adminData"];
+export type AdminDataRecord = AdminData & XataRecord;
+
 export type DatabaseSchema = {
   userData: UserDataRecord;
   applicationData: ApplicationDataRecord;
   events: EventsRecord;
+  adminData: AdminDataRecord;
 };
 
 const DatabaseClient = buildClient();

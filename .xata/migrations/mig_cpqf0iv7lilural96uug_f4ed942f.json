@@ -1,0 +1,17 @@
+{
+  "id": "mig_cpqf0iv7lilural96uug",
+  "parentID": "mig_cpqf04n7lilural96utg",
+  "checksum": "1:f4ed942ff61144d88bdbffc8ceb5c1f99a800afb7ccfee85763c6d13993fc70b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "password",
+          "type": "string",
+          "unique": true
+        },
+        "table": "adminData"
+      }
+    }
+  ]
+}

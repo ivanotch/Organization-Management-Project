@@ -1,0 +1,12 @@
+{
+  "id": "mig_cpqevf77lilural96urg",
+  "parentID": "mig_cpemmo37g140b3b25d40",
+  "checksum": "1:e4de6e2f69ef14e05b74a6095227e23a3d10145c5f38471f17279dfccdf5310c",
+  "operations": [
+    {
+      "addTable": {
+        "table": "adminData"
+      }
+    }
+  ]
+}
