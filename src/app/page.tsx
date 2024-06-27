@@ -4,6 +4,7 @@ import NewestSection from '../sections/NewestSection';
 import OpenFormSection from '../sections/OpenFormSection';
 import { getXataClient } from "@/xata";
 import { currentUser } from '@clerk/nextjs';
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   // const data = [{
@@ -61,6 +62,12 @@ export default async function Home() {
   const user = await currentUser();
 
   const userId = user?.id;
+
+  const id = await xata.db.userData.filter({userId: userId}).getMany();
+
+  if (!id) {
+    redirect('/signup-details');
+  }
 
   const records = await xata.db.events
     .select([
